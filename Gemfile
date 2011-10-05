@@ -8,6 +8,7 @@ gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.2.0"
 gem "devise", ">= 1.4.4"
+gem "cancan"
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
