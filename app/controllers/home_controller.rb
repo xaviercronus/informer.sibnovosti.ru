@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @streams = Stream.all
+    redirect_to streams_path
   end
 
 end
