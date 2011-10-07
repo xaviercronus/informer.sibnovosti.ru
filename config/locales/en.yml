@@ -1,5 +1,5 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  create_new_user: 'Create new user'
+  create_new_stream: 'Create new stream'
+  user_successfully_created: 'Manager successfully created.'
+  stream_successfully_created: 'Stream successfully created.'

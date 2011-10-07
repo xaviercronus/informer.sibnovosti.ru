@@ -1,0 +1,11 @@
+= link_to t(:create_new_user), new_user_path
+
+%table
+  %tr
+    %td= t(:name)
+    %td= t(:email)
+  
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= user.email

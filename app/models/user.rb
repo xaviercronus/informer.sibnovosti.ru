@@ -1,11 +1,11 @@
 class User
   include Mongoid::Document
   
-  ROLES = [:admin, :manage]
+  ROLES = [:admin, :manager]
   
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable, :registerable
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
 
@@ -22,6 +22,10 @@ class User
                   :password_confirmation, 
                   :remember_me
                   
+  def roles
+    User::ROLES.map { |role| [role, role] }
+  end
+  
   ROLES.each do |role|
     define_method "is_#{role}?" do
       self.role == role

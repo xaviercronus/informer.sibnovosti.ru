@@ -12,6 +12,11 @@ module NavigationHelpers
       root_path
     when /the sign out\s?page/
       destroy_user_session_path
+    when /the sign in\s?page/
+      new_user_session_path
+    when /the stream's page with title "([^"]*)"/
+      stream = Stream.where(:title => $1).first
+      stream_path(stream)
 
     else
       begin

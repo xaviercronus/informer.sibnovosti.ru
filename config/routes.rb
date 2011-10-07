@@ -5,9 +5,8 @@ InformerSibnovostiRu::Application.routes.draw do
   
   root :to => "home#index"
 
-  resources :streams do
-    
-  end
+  resources :streams
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
