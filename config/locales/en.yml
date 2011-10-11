@@ -3,3 +3,8 @@ en:
   create_new_stream: 'Create new stream'
   user_successfully_created: 'Manager successfully created.'
   stream_successfully_created: 'Stream successfully created.'
+  title: 'Title'
+  url: 'Url'
+  edit: 'Edit'
+  delete: 'Delete'
+  save: 'Save'

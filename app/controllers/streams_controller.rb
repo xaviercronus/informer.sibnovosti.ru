@@ -1,4 +1,6 @@
 class StreamsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @streams = Stream.all
   end
@@ -19,5 +21,19 @@ class StreamsController < ApplicationController
   def show
     @stream = Stream.find params[:id]
   end
-
+  
+  def edit
+    @stream = Stream.find params[:id]
+  end
+  
+  def update
+    @stream = Stream.new params[:stream]
+    
+    if @stream.save
+      redirect_to streams_path, :notice => t(:stream_successfully_updated)
+    else
+      render :action => :edit
+    end
+  end
+  
 end

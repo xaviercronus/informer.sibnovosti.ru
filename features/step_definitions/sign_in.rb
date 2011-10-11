@@ -6,3 +6,9 @@ end
 Given /^I am signed out$/ do
   And %{I am not signed in}
 end
+
+Given /^I am signed in with the following data:$/ do |table|
+  When %{I go to the sign in page}
+  And  %{I fill in the following:}, table
+  Then %{I press "Sign in"}
+end

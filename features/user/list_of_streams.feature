@@ -9,7 +9,6 @@ Feature: List of streams
   Scenario: User go to the page with streams
     When I go to the home page
     Then I should be on the streams page
-    #And I should see   
   
   
 

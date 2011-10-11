@@ -1,4 +1,4 @@
-Given /^I signed in as manager$/ do
+Given /^I am signed in as manager$/ do
   When %{I signed in as admin}
   Then %{I create a manager}
   And  %{I am signed out}

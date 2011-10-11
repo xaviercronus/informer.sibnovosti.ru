@@ -1,11 +1,17 @@
-= link_to t(:create_new_stream), new_stream_path
+= link_to t(:create_new_stream), new_stream_path if can? :manage, Stream
 
 %table
   %tr
     %td= t(:title)
     %td= t(:url)
+    - if can? :manage, Stream
+      %td= t(:edit)
+      %td= t(:delete)
     
   - @streams.each do |stream|
     %tr
       %td= link_to stream.title, stream_path(stream)
       %td= stream.url
+      - if can? :manage, Stream
+        %td= link_to t(:edit), edit_stream_path(stream), :title => "Edit #{stream.title}"
+        %td= link_to t(:delete), '#'

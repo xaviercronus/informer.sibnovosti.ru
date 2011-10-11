@@ -17,6 +17,9 @@ module NavigationHelpers
     when /the stream's page with title "([^"]*)"/
       stream = Stream.where(:title => $1).first
       stream_path(stream)
+    when /the stream's edit page with title "([^"]*)"/
+      stream = Stream.where(:title => $1).first
+      edit_stream_path(stream)
 
     else
       begin

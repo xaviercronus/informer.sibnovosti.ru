@@ -1,4 +1,3 @@
-@wip
 Feature: Specific stream
   In order to view a specific stream
   As a user
