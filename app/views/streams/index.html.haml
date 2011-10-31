@@ -14,4 +14,4 @@
       %td= stream.url
       - if can? :manage, Stream
         %td= link_to t(:edit), edit_stream_path(stream), :title => "Edit #{stream.title}"
-        %td= link_to t(:delete), '#'
+        %td= link_to(t(:delete), stream_path(stream), :method => :delete, :confirm => t(:are_you_sure))

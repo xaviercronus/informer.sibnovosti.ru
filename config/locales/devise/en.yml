@@ -1,0 +1,4 @@
+en:
+  devise:
+    registrations:
+      signed_up: 'Manager successfully created.'

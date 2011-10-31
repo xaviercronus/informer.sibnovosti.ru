@@ -1,7 +1,7 @@
 Given /^a stream with the following data:$/ do |table|
   When %{I am signed in as manager}
-  Then   %{I create a stream with the following data:}, table
-  And   %{I am signed out}
+  Then %{I create a stream with the following data:}, table
+  And  %{I am signed out}
 end
 
 Given /^I create a stream with the following data:$/ do |table|

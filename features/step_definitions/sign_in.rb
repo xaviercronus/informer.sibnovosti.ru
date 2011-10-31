@@ -8,7 +8,12 @@ Given /^I am signed out$/ do
 end
 
 Given /^I am signed in with the following data:$/ do |table|
-  When %{I go to the sign in page}
+  When %{I go to the home page}
+  And  %{I follow "Sign in"}
   And  %{I fill in the following:}, table
   Then %{I press "Sign in"}
+end
+
+Then /^I should be signed in as "([^"]*)"$/ do |name|
+  Then %{I should see "#{name} - is you."}
 end

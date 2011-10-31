@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_path, :alert => exception.message
   end
+  
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
 end

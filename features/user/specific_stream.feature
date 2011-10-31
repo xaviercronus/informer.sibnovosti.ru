@@ -6,7 +6,7 @@ Feature: Specific stream
   Background: 
     Given a stream with the following data:
     | Title | Test stream                 |
-    | Url   | http://example.com/feed.xml |
+    | Url   | http://www.rssboard.org/files/sample-rss-2.xml |
     And I am not signed in
     
   Scenario: User go to the specific stream

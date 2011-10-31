@@ -1,0 +1,4 @@
+ru:
+  devise:
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.ololo'

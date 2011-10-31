@@ -1,13 +1,16 @@
 InformerSibnovostiRu::Application.routes.draw do
+  get "users/index"
+
   get "home/index"
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations'}
   
   root :to => "home#index"
 
   resources :streams
-  resources :users
 
+  match 'users' => 'users#index' 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

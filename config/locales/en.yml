@@ -8,3 +8,7 @@ en:
   edit: 'Edit'
   delete: 'Delete'
   save: 'Save'
+  stream_successfully_updated: 'Stream successfully updated'
+  are_you_sure: 'Are you sure'
+  sign_in: 'Sign in'
+  sign_out: 'Sign out'

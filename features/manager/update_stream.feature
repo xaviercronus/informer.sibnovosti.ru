@@ -6,7 +6,7 @@ Feature: Update stream
   Background:
     Given a stream with the following data:
     | Title | New stream                  |
-    | Url   | http://example.com/feed.xml |
+    | Url   | http://www.rssboard.org/files/sample-rss-2.xml |
     And I am signed in with the following data:
     | Email    | manager@example.com |
     | Password | password            |

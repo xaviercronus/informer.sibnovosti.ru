@@ -27,13 +27,18 @@ class StreamsController < ApplicationController
   end
   
   def update
-    @stream = Stream.new params[:stream]
+    @stream = Stream.find params[:id]
     
-    if @stream.save
+    if @stream.update_attributes params[:stream]
       redirect_to streams_path, :notice => t(:stream_successfully_updated)
     else
       render :action => :edit
     end
+  end
+  
+  def destroy
+    Stream.find(params[:id]).delete
+    redirect_to streams_path
   end
   
 end
