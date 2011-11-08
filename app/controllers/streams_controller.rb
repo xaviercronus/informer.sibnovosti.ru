@@ -10,7 +10,7 @@ class StreamsController < ApplicationController
   end
   
   def create
-    @stream = Stream.create params[:stream]
+    @stream = Stream.new params[:stream]
     if @stream.save
       redirect_to streams_path, :notice => t(:stream_successfully_created)
     else

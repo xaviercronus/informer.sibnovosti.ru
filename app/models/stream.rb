@@ -1,4 +1,5 @@
 require 'feedzirra'
+require 'resque'
 
 class Stream
   include Mongoid::Document
@@ -15,7 +16,11 @@ class Stream
                   
   has_many :publications, :dependent => :destroy
   
-  after_update :update_stream
+  after_save :run_updater
+  
+  def run_updater
+    Resque.enqueue(StreamUpdater, self.id)
+  end
   
   def update_stream
     self.publications.delete_all
