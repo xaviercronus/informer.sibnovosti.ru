@@ -10,7 +10,7 @@ gem "mongoid", ">= 2.2.0"
 gem "devise", ">= 1.4.4"
 gem "cancan"
 gem 'feedzirra'
-gem 'resque-scheduler'
+gem 'resque-scheduler', '= 2.0.0.e' 
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

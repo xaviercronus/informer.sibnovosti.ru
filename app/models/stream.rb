@@ -16,10 +16,16 @@ class Stream
                   
   has_many :publications, :dependent => :destroy
   
-  after_save :run_updater
+  after_save :update_resque_schedule
   
-  def run_updater
-    Resque.enqueue(StreamUpdater, self.id)
+  def update_resque_schedule
+    # Resque.remove_schedule "some_job"
+    Resque.set_schedule("StreamUpdater_#{self.id.to_s}", {
+      :cron  => "*/1 * * * *",
+      :class => "StreamUpdater",
+      :queue => :snippets_queue,
+      :args  => self.id
+    })    
   end
   
   def update_stream
